@@ -50,7 +50,7 @@
 
 
     // Set these variables to their DOM elements
-    var myRevenueMessage = document.getElementById('message');
+    var myRevenueMessage = document.getElementById('revenue');
 
     var myImage = document.getElementById('coffee-image');
     var myLatte = document.getElementById('latte');
@@ -64,11 +64,11 @@
 
     var drinksOrdered = [];
 
-    var revenue = 0;
+    var totalRevenue = 0;
 
     function makeCoffee(drinkType) {
 
-        revenue += prices[drinkType];
+        totalRevenue += prices[drinkType];
 
         myImage.setAttribute('src', 'static/coffee_machine.jpg');        
         setTimeout(function () {
@@ -81,8 +81,8 @@
 
         setTimeout(function () {drinksOrdered.push(drinkType);
             console.log("Drinks so far: " + drinksOrdered);
-            console.log("Revenue so far: " + revenue);
-            myRevenueMessage.innerHTML = "Revenue so far: $" + revenue.toFixed(2);
+            console.log("Revenue so far: " + totalRevenue);
+            myRevenueMessage.innerHTML = "$" + totalRevenue.toFixed(2);
         }, 1500);
 
     }
